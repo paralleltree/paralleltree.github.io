@@ -13,7 +13,10 @@ const DEST_PATH = './dist';
 
 gulp.task('slim', () => {
   gulp.src(SLIM_FILES)
-    .pipe(slim())
+    .pipe(slim({
+      require: 'slim/include',
+      options: `include_dirs=["${ path.join(SLIM_PATH, 'includes') }"]`
+    }))
     .pipe(gulp.dest(DEST_PATH));
 });
 
