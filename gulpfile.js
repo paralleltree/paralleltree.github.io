@@ -1,5 +1,6 @@
 const path = require('path');
 const gulp = require('gulp');
+const rename = require('gulp-rename');
 const slim = require('gulp-slim');
 const sass = require('gulp-sass');
 
@@ -21,8 +22,9 @@ gulp.task('slim', () => {
 });
 
 gulp.task('sass', () => {
-  gulp.src(SASS_FILES)
+  gulp.src(path.join(SASS_PATH, 'entry.sass'))
     .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(rename('bundle.css'))
     .pipe(gulp.dest(DEST_PATH));
 });
 
