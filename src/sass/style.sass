@@ -15,6 +15,27 @@
   max-width: 52px
   filter: drop-shadow(2px 2px 2px #bbb)
 
+ul.list-divider
+  li
+    &:nth-of-type(n+2)
+      margin-top: 10px
+      padding-top: 10px
+      border-top: solid 1px #ddd;
+
+li
+  display: flow-root;
+  .society
+    display: inline-block
+
+    .conference, .paper-authors, .paper-title
+      display: block
+
+    .paper-authors, .paper-title
+      margin-left: 16px
+
+.badge-link
+  display: inline-block
+
 .link
   .icon
     display: inline-block
@@ -26,10 +47,10 @@
 
 .mail
   &:before
-    content: 'paralleltree'
+    content: 'paramtree'
 
   &:after
-    content: 'outlook.com'
+    content: 'gmail.com'
 
 html
   height: 100%
